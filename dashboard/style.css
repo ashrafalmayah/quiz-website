@@ -1,0 +1,35 @@
+/* Basic Reset */
+*{ 
+    margin: 0;
+    padding: 0;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    min-height: 100vh;
+}
+/* End of Basic Reset */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: #dde1e7;
+    padding-top: 3rem
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}

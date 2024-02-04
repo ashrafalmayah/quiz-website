@@ -1,0 +1,60 @@
+/* Basic Reset */
+*{ 
+    margin: 0;
+    padding: 0;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    min-height: 100vh;
+}
+/* End of Basic Reset */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: #dde1e7;
+    padding-top: 3rem
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main{
+    display: grid;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+.card{
+    background-color: #fff;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+.button{
+    text-decoration: none;
+    justify-self: center;
+    grid-column: span 2;
+    color: #fff;
+    background-color: #2b69dd;
+    padding: 0.5em 2em;
+
+}

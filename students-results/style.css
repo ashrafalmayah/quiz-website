@@ -1,0 +1,115 @@
+/* Basic Reset */
+*{ 
+    margin: 0;
+    padding: 0;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    min-height: 100vh;
+}
+/* End of Basic Reset */
+body {
+    background: linear-gradient(#111, #222);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    border-color: #ccbcbc;
+    border-radius: 20px;
+}
+
+.hedeng p {
+    font-size: 22px;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-end: 25px;
+    font-weight: 700;
+}
+
+tr td {
+    border: 1px solid black;
+}
+
+#studentsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#studentsTable th {
+    background-color: #1f10f0;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: right;
+}
+
+#studentsTable tr {
+    background-color: #f2f2f2;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: right;
+}
+
+
+/* .hedengP {}
+
+.TableLocation {
+    margin-left: 20%;
+    width: 20px;
+}
+
+.th,
+td {
+    text-align: right;
+}
+
+#myTable {
+    width: 500px;
+    border-collapse: collapse;
+}
+
+#myTable th,
+#myTable td {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+#myTable th {
+    background-color: #c03434;
+}
+
+#myTable th:nth-child(3) {
+    color: rgb(32, 31, 31);
+}
+
+#myTable th:nth-child(3)[data-grade="A"] {
+    background-color: green;
+}
+
+#myTable th:nth-child(3)[data-grade="B"] {
+    background-color: yellow;
+}
+
+#myTable th:nth-child(3)[data-grade="C"] {
+    background-color: red;
+} */

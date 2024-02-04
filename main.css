@@ -1,0 +1,119 @@
+/* Basic Reset */
+*{ 
+    margin: 0;
+    padding: 0;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    min-height: 100vh;
+}
+/* End of Basic Reset */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: #dde1e7;
+    padding-top: 3rem
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    width: 30rem;
+    margin: 0 auto;
+    border-top: 0.125rem solid #A5D6A7;
+    padding: 2rem;
+    text-align: right;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    flex-direction: column;
+}
+
+label {
+    color: #607d8b;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 90%;
+    height: 22px;
+}
+
+.wrapper {
+    background: #dde1e7;
+    padding: 25px;
+    border-radius: 3px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
+    font-family: "Poppins", sans-serif;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    background: #dde1e7;
+    flex: 1;
+    margin: 0px 5px;
+    border-radius: 3px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
+}
+
+.pagination li a {
+    height: 45px;
+    width: 55px;
+    color: #4d3252;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    line-height: 45px;
+    text-align: center;
+}
+
+.pagination li:first-child a {
+    width: 120px;
+}
+
+.pagination li:last-child a {
+    width: 100px;
+}
+
+.pagination li.active {
+    box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 5px #5e687949;
+}
+
+.pagination li.active a {
+    font-size: 17px;
+    color: #6f6cde;
+}
+
+.pagination li:first-child {
+    margin: 0 15px 0 0;
+}
+
+.pagination li:last-child {
+    margin: 0 0 0 15px;
+}
