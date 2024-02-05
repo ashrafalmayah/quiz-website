@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <?php require("../functions.php"); ?>
-    <?php require("../partials/navbar.php"); ?>
+    <?php require("../../functions.php"); ?>
+    <?php require("../../partials/navbar.php"); ?>
     <main>
         <div class="card">
             <div>

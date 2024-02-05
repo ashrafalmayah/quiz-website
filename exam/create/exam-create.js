@@ -141,28 +141,6 @@ form.addEventListener("submit", (e) => {
         return;
     }
     document.querySelector(".note").textContent = "";
-
-    let resultArray = [];
-    // Assuming you have a loop to iterate over each question template
-    document.querySelectorAll(".question").forEach(function (questionElement) {
-        let question = {
-            type: questionElement.querySelector('[name="type"]').value,
-            content: questionElement.querySelector('[name="content"]').value,
-            options: [],
-        };
-
-        // Assuming you have a loop to iterate over each question option
-        questionElement
-            .querySelectorAll(".question-option")
-            .forEach(function (option) {
-                let optionValue = option.querySelector(
-                    'input[name="option"]'
-                ).value;
-                question.options.push(optionValue);
-            });
-
-        resultArray.push(question);
-    });
 });
 
 addQuestion();

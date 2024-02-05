@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <?php require("../functions.php"); ?>
-  <?php require("../partials/navbar.php"); ?>
+  <?php require("../../../functions.php"); ?>
+  <?php require("../../../partials/navbar.php"); ?>
   <main>
     <h2> اسم الختبار</h2>
     <form action="">

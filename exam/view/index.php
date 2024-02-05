@@ -10,39 +10,45 @@
 </head>
 
 <body>
-  <?php require("../functions.php"); ?>
-  <?php require("../partials/navbar.php"); ?>
+  <?php require("../../functions.php"); ?>
+  <?php require("../../partials/navbar.php"); ?>
   <main>
     <h2> اسم الختبار</h2>
-    <form action="">
-      <div class="question">
-        <h1>السؤال الاول</h1>
-        <label for=""> في اي عام ولدة </label>
-        <div class="question-options">
-          <div>
-            <input type="radio" name="q1" id="">
-            <label for="">2000 </label>
-          </div>
-          <div>
-            <input type="radio" name="q1" id="">
-            <label for="">2000 </label>
-          </div>
-          <div>
-            <input type="radio" name="q1" id="">
-            <label for="">2000 </label>
-          </div>
-          <div>
-            <input type="radio" name="q1" id="">
-            <label for="">2000 </label>
-          </div>
-        </div>
-      </div>
-      <div class="question">
-        <h1>السؤال الثاني</h1>
-        <label for="">عبر عنن حياتك</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </div>
+    <form action="answers-store.php" method="post">
+      <?php
+        $db_connect = connectDB();
+        $questions = mysqli_query($db_connect, "select id, question, question_type from questions where exam_id = {$_GET["id"]}");
+        while($question = $questions->fetch_assoc()){
+          if($question["question_type"] == "select"){
+            ?>
+            <div class="question">
+              <h1><?= $question["question"] ?></h1>
+              <div class="question-options">
+                <?php 
+                $options = mysqli_query($db_connect, "select id, content from options where question_id = {$question["id"]}");
+                while($option = $options->fetch_assoc()){
+                ?>
+                <div>
+                  <input type="radio" value="<?= $option["id"] ?>" name="answers[<?= $question["id"] ?>]" id="">
+                  <label for=""><?= $option["content"] ?></label>
+                </div>
+                <?php } ?>
+              </div>
+            </div>
+          <?php
+          } else {
+            ?>
+            <div class="question">
+              <h1><?= $question["question"] ?></h1>
+              <textarea name="answers[<?= $question["id"] ?>]" id="" cols="30" rows="10"></textarea>
+            </div>
+            <?php 
+          }
+        }
+        $db_connect->close();
+      ?>
       <div>
+        <input type="hidden" name="examId" value = "<?= $_GET["id"] ?>">
         <input type="submit" value="تاكيدالاجابة">
       </div>
     </form>

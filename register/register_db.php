@@ -1,10 +1,5 @@
 <?php
-    $db_connect = mysqli_connect('localhost','root','','quizly')
-    or die(mysqli_connect_error());
-
-    if(!$db_connect){
-        die("connection failed");
-    }
+    $db_connect = connectDB();
 
     $sql="SELECT username from users where username = '{$_POST["username"]}' or email='{$_POST["email"]}'";
     $result = mysqli_query($db_connect, $sql);
@@ -15,7 +10,7 @@
     else{
         $sql="insert into users (username, email, password) values('{$_POST["username"]}','{$_POST["email"]}', '{$_POST["password"]}')";
         $result = mysqli_query($db_connect, $sql);
-        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["userId"] = $_POST["userId"];
         header("location: /");
     }
 

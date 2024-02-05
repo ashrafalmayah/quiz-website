@@ -3,10 +3,20 @@
         position: fixed;
         top: 0;
         width: 100%;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        background-color: #7a7d80;
+        padding: 0 2rem;
+    }
+    .logo{
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
     }
     nav ul {
         display: flex;
-        background-color: #7a7d80;
         justify-content: center;
     }
 
@@ -18,7 +28,7 @@
         display: block;
         text-decoration: none;
         color: white;
-        padding: .75em 1.5em;
+        padding: 1em 1.5em;
         transition: background-color .3s;
     }
     nav ul li a:hover {
@@ -30,7 +40,7 @@
         <ul>
             <li><a href="/">الرئيسية</a></li>
             <li><a href="/">عن الموقع</a></li>
-            <?php if(isset($_SESSION["username"])): ?>
+            <?php if(isset($_SESSION["userId"])): ?>
             <li><a href="/dashboard">لوحة التحكم</a></li>
             <?php else: ?>
             <li><a href="/login">تسجيل دخول</a></li>
@@ -38,4 +48,5 @@
             <?php endif; ?>
         </ul>
     </nav>
+    <a class="logo" href="/">Quizly</a>
 </header>
