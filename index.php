@@ -1,7 +1,6 @@
 <?php 
 require("functions.php");
 $db_connect = connectDB();
-$userId = $_SESSION["user"]["id"];
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $totalExams = mysqli_query($db_connect, "SELECT COUNT(*) AS total FROM exams where name like '%$search%'");
 $totalExams = $totalExams->fetch_assoc()["total"];

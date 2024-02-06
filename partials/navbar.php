@@ -6,6 +6,7 @@
         z-index: 100;
         display: grid;
         grid-template-columns: 1fr auto;
+        align-items: center;
         background-color: #7a7d80;
         padding: 0 2rem;
     }
