@@ -13,7 +13,7 @@
     <?php require("../partials/navbar.php"); ?>
     <main>
         <h1>لوحة التحكم</h1>
-        <h2><?= $_SESSION["userId"] ?></h2>
+        <h2><?= $_SESSION["user"]["name"] ?></h2>
 
         <div class="list">
             <div class="options">
@@ -21,7 +21,7 @@
             </div>
             <?php 
                 $db_connect = connectDB();
-                $userId = $_SESSION["userId"];
+                $userId = $_SESSION["user"]["id"];
                 $sql = "select id, name, create_date from exams where user_id = $userId";
                 $result = mysqli_query($db_connect, $sql);
                 while($exam = $result->fetch_assoc()){

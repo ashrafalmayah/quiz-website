@@ -7,7 +7,7 @@ $db_connect = connectDB();
 
 $now = date('YYYY-mm-dd');
 
-$userId = $_SESSION["userId"];
+$userId = $_SESSION["user"]["id"];
 
 $sql = "INSERT INTO exams (name, user_id, create_date) VALUES ('{$_POST["examName"]}', $userId, NOW())";
 $result = mysqli_query($db_connect, $sql);
@@ -39,3 +39,4 @@ foreach($_POST["questions"] as $question){
 $db_connect->close();
 
 header("location: /dashboard");
+exit();

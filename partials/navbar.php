@@ -40,8 +40,9 @@
         <ul>
             <li><a href="/">الرئيسية</a></li>
             <li><a href="/">عن الموقع</a></li>
-            <?php if(isset($_SESSION["userId"])): ?>
+            <?php if(isset($_SESSION["user"])): ?>
             <li><a href="/dashboard">لوحة التحكم</a></li>
+            <li><a href="/logout">تسجيل الخروج</a></li>
             <?php else: ?>
             <li><a href="/login">تسجيل دخول</a></li>
             <li><a href="/register">تسجيل</a></li>

@@ -31,7 +31,7 @@ body {
 
 main{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: grid;
     gap: 20px;
 }
@@ -52,17 +52,18 @@ main{
 .list{
     display: grid;
     gap: 20px;
-    background-color: white;
-    border-radius: 20px;
     padding: 2rem;
-
+    background: #dde1e7;
+    border-radius: 3px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
 }
 
 .item{
     display: block;
     text-decoration: none;
     color: unset;
-    border-radius: 20px;    
-    border: 1px solid;
+    border-radius: 5px; 
     padding: 1rem;
+    background: #dde1e7;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
 }

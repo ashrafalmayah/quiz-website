@@ -18,6 +18,25 @@
     
     
         <div class="wrapper">
+            <div class="list">
+                <?php 
+                    $db_connect = connectDB();
+                    $userId = $_SESSION["user"]["id"];
+                    $sql = "SELECT id, name, create_date from exams limit 8";
+                    $result = mysqli_query($db_connect, $sql);
+                    while($exam = $result->fetch_assoc()){
+                        $questionsCount = mysqli_query($db_connect, "select count(*) as questionsCount from questions where exam_id = {$exam["id"]}");
+                        $questionsCount = $questionsCount->fetch_assoc()["questionsCount"];
+                        ?>
+                        <a href="/exam/view?id=<?= $exam["id"] ?>" class="item">
+                            <h2><?= $exam["name"] ?></h2>
+                            <p>عدد الاسئلة: <span><?= $questionsCount ?></span></p>
+                        </a>
+                    <?php
+                    } 
+                    $db_connect->close();
+                    ?>
+            </div>
             <ul class="pagination">
                 <li><a href="#">previous</a></li>
                 <li class="active"><a href="#">1</a></li>

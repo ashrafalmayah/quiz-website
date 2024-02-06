@@ -31,7 +31,7 @@ body {
 
 main{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
     padding: 10px;
     margin: 10px;

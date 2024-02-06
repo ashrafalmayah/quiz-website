@@ -31,7 +31,7 @@ body {
 
 main{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 form{
@@ -49,4 +49,14 @@ form{
     padding: .25em 1em;
     margin-top: 10px;
     border-radius: 5px;
+}
+
+.button{
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    justify-self: center;
+    color: #fff;
+    background-color: #2b69dd;
+    padding: 0.5em 2em;
 }

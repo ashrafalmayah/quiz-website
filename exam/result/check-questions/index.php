@@ -1,3 +1,13 @@
+<?php 
+require("../../../functions.php");
+
+$db_connect = connectDB();
+$examId = $_GET["id"];
+$userId = $_SESSION["user"]["id"];
+$examName = mysqli_query($db_connect, "SELECT name from exams where id = $examId");
+$examName = $examName->fetch_assoc()["name"];
+$questions = mysqli_query($db_connect, "SELECT id, question, question_type from questions where exam_id = $examId");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,40 +15,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>التحقق من الاسئله</title>
   <link rel="stylesheet" href="check-questions.css">
 </head>
 
 <body>
-  <?php require("../../../functions.php"); ?>
   <?php require("../../../partials/navbar.php"); ?>
   <main>
-    <h2> اسم الختبار</h2>
-    <form action="">
-      <div class="question">
-        <h1>السؤال الاول</h1>
-        <label for="">في اي عام ولد محمد رسول الله </label>
-        <div class="question-options">
-          <div class="wrong">
-            2000
-          </div>
-          <div>
-            2000
-          </div>
-          <div class="correct">
-            2000
-          </div>
-          <div>
-            2000
-          </div>
+    <h2><?= $examName ?></h2>
+    <div class="questions-container">
+      <?php while($question = $questions->fetch_assoc()): ?>
+        
+        <div class="question">
+          <h1><?= $question["question"] ?></h1>
+
+          <?php if($question["question_type"] == "select"): ?>
+            <div class="question-options">
+              <?php 
+              $selectedOptionId = mysqli_query($db_connect, "SELECT selected_option_id from user_answers where user_id = $userId and exam_id = $examId and question_id = {$question["id"]}");
+              // if(mysqli_num_rows($selectedOptionId) <= 0){
+              //   //TODO make some logic here
+              // }
+              $selectedOptionId = $selectedOptionId->fetch_assoc()["selected_option_id"];
+
+              $options = mysqli_query($db_connect, "select id, content, is_correct from options where question_id = {$question["id"]}");
+              while($option = $options->fetch_assoc()): 
+              $isSelected = $selectedOptionId == $option["id"];
+              ?>
+
+                <div class="<?php if($isSelected && !$option["is_correct"]) echo 'wrong'; elseif($option["is_correct"]) echo 'correct' ?>">
+                  <?= $option["content"] ?>
+                </div>
+                
+              <?php endwhile; ?>
+            </div>
+
+          <?php else: ?>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          <?php endif; ?>
+
         </div>
-      </div>
-      <div class="question">
-        <h1>السؤال الثاني</h1>
-        <label for="">عبر عنن حياتك</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </div>
-    </form>
+
+      <?php endwhile; 
+      
+      $db_connect->close();
+      ?>
+      <a href="/exam/result/?id=<?= $examId ?>" class="button">الرجوع الى النتيجة</a>
+    </div>
   </main>
 </body>
 

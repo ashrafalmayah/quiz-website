@@ -31,15 +31,16 @@ body {
 
 main{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
+    
 }
 
-form{
+.questions-container{
     display: grid;
     gap: 20px;
 }
 .question{
-    background-color: aliceblue;
+    border: #97d497 solid 3px;
     border-radius: 20px;
     padding: 30px 100px;
     display: grid;
@@ -52,6 +53,10 @@ form{
     border-radius: 5px;
 }
 
+.question:has(.wrong){
+    border-color: #c77f7f;
+}
+
 .correct{
     background-color: #b9e2b9;
     border: #97d497 solid 2px;
@@ -60,4 +65,11 @@ form{
 .wrong{
     background-color: #c59a9a;
     border: #c77f7f solid 2px;
+}
+.button{
+    text-decoration: none;
+    justify-self: center;
+    color: #fff;
+    background-color: #2b69dd;
+    padding: 0.5em 2em;
 }
