@@ -32,10 +32,9 @@ body {
 main{
     max-width: 1200px;
     margin: 1rem auto;
-    background-color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 2rem;
-    box-shadow: 3px 3px 10px #b8b8b8;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
 }
 
 #questions-form{
@@ -55,7 +54,6 @@ main{
 button, input[type="submit"], main a{
     text-decoration: none;
     border: none;
-    background-color: #ffffff;
     border-radius: .5em;
     padding: 0.25em 2em; 
     cursor: pointer;
@@ -83,8 +81,9 @@ button, input[type="submit"], main a{
 }
 
 .question select {
+    border: none;
     padding: 0.25em 1em;
-    border-radius: 10px;
+    border-radius: 5px;
     border-color: #585858;
 }
 
@@ -104,7 +103,7 @@ button, input[type="submit"], main a{
     resize: vertical;
 }
 
-.question input:focus, .question textarea:focus{
+input:focus, textarea:focus{
     outline: none;
 }
 
@@ -119,6 +118,10 @@ button, input[type="submit"], main a{
     color: #808080;
     width: 100%;
     margin-bottom: 20px;
+}
+
+input[type="submit"], #cancel{
+    padding: .5em 2.5em;
 }
 
 input[type="submit"]{

@@ -1,3 +1,7 @@
+<?php
+require("../functions.php"); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,6 @@
 </head>
 
 <body>
-    <?php require("../functions.php"); ?>
     <?php require("../partials/navbar.php"); ?>
     <main>
         <form action="login-db.php" method="post">

@@ -36,6 +36,38 @@ main{
     gap: 20px;
 }
 
+.options {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr auto;
+}
+
+.search label{
+    grid-column: span 2;
+}
+
+.search input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #2b69dd;
+    padding: 0.25em 1.5em;
+    border-radius: 5px;
+}
+
+.search-text{
+    border: none;
+    border-radius: 5px;
+    padding: 0.25em 0.5em;
+}
+
 .add-exam-btn{
     text-decoration: none;
     justify-self: center;

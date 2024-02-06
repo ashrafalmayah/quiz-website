@@ -1,3 +1,7 @@
+<?php 
+require("../../functions.php"); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,6 @@
 </head>
 
 <body>
-    <?php require("../../functions.php"); ?>
     <?php require("../../partials/navbar.php"); ?>
     <main>
         <!-- Question Template -->
@@ -20,9 +23,11 @@
                 <input type="text" class="exam-name" name="examName" id="examName" placeholder="اسم الاختبار:">
             </div>
             <button id="add-new-question-btn" type="button">أضف سؤال جديد <i class="fa fa-plus"></i></button>
-            <input type="submit" value="تأكيد">
-            <a href="../dashboard.php" id="cancel">إلغاء</a>
-            <span class="note"></span>
+            <div>
+                <input type="submit" value="تأكيد">
+                <a href="../dashboard.php" id="cancel">إلغاء</a>
+                <span class="note"></span>
+            </div>
         </form>
     </main>
 
