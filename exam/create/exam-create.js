@@ -4,7 +4,6 @@ const form = document.getElementById("questions-form");
 const cancel = document.getElementById("cancel");
 
 function addQuestion() {
-    // const newQuestion = questionTemplate.cloneNode(true);
     const newQuestion = document.createElement("div");
     let max = -1;
     questions &&

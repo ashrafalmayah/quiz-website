@@ -1,4 +1,4 @@
-<?php 
+<?php
 require("../../functions.php");
 
 $db_connect = connectDB();
@@ -11,22 +11,22 @@ $questionsCount = mysqli_query($db_connect, "select count(*) as questionsCount f
 $questionsCount = $questionsCount->fetch_assoc()["questionsCount"];
 $percent = round(($mark / $questionsCount) * 100);
 $rate;
-if($percent >= 90){
+if ($percent >= 90) {
     $rate = "ممتاز";
-} elseif($percent >= 80) {
+} elseif ($percent >= 80) {
     $rate = "جيد جداً";
-} elseif($percent >= 70) {
+} elseif ($percent >= 70) {
     $rate = "جيد";
-} elseif($percent >= 60) {
+} elseif ($percent >= 60) {
     $rate = "مقبول";
-} elseif($percent >= 50) {
+} elseif ($percent >= 50) {
     $rate = "ضعيف";
 } else {
     $rate = "راسب";
 }
 
 // if(mysqli_num_rows($mark) > 0){
-    
+
 // }
 ?>
 
@@ -80,7 +80,18 @@ if($percent >= 90){
             </div>
         </div>
         <a href="/exam/result/check-questions/?id=<?= $examId ?>" class="button">التحقق من الاسئله</a>
+        <a href="/students-results?id=<?= $examId ?>" class="button">قائمة نتائج الطلاب</a>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+    <script>
+        function showconfetti() {
+            confetti({
+                particlecount: 300,
+                spread: 100
+            });
+        }
+        showconfetti();
+    </script>
 </body>
 
 </html>

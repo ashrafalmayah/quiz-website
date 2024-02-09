@@ -17,16 +17,16 @@ html{
     overflow-x: hidden;
 }
 body{
+  padding-top: 3rem;
     min-height: 100vh;
 }
 /* End of Basic Reset */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'cairo', sans-serif;
     direction: rtl;
     min-height: 100vh;
-    background: #dde1e7;
-    padding-top: 3rem
+    background: #f3f9ff;
 }
 
 main{
@@ -41,6 +41,13 @@ main{
     gap: 20px;
     align-items: center;
     justify-content: space-between;
+}
+
+
+@media screen and (max-width: 768px) {
+    .options {
+        flex-direction: column;
+    }
 }
 
 .search {
@@ -62,11 +69,18 @@ main{
     border-radius: 5px;
 }
 
+.search-text:focus {
+    outline: none;
+    box-shadow: 0px 3px 6px #538aff inset;
+}
+
 .search-text{
     border: none;
     border-radius: 5px;
     padding: 0.25em 0.5em;
+    box-shadow: 0px 3px 6px #bad0ff inset;
 }
+
 
 .add-exam-btn{
     text-decoration: none;
@@ -85,17 +99,84 @@ main{
     display: grid;
     gap: 20px;
     padding: 2rem;
-    background: #dde1e7;
+    background: #fff;
     border-radius: 3px;
     box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
 }
 
 .item{
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
     text-decoration: none;
-    color: unset;
-    border-radius: 5px; 
+    color: #0b61c1;
+    border-radius: 5px;
     padding: 1rem;
-    background: #dde1e7;
+    background: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
+}
+
+.item a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.item:hover{
+    box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 5px #538aff49;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    background: #fff;
+    flex: 1;
+    margin: 0px 5px;
+    border-radius: 3px;
     box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
+}
+
+.pagination li a {
+    height: 45px;
+    width: 100%;
+    color: #4d3252;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    line-height: 45px;
+    text-align: center;
+}
+.pagination li.active {
+    box-shadow: inset -3px -3px 7px #ffffff8b, inset 3px 3px 5px #5e687979;
+}
+
+.pagination li.active a {
+    cursor: default;
+    pointer-events: none;
+    font-size: 17px;
+    color: #6f6cde;
+}
+
+.pagination li:first-child {
+    margin: 0 15px 0 0;
+}
+
+.pagination li:last-child {
+    margin: 0 0 0 15px;
+}
+
+
+.item .button{
+    text-decoration: none;
+    justify-self: center;
+    color: #fff;
+    background-color: #2b69dd;
+    padding: 0.5em 2em;
+}
+.item .button:hover{
+    background-color: #0b61c1;
 }

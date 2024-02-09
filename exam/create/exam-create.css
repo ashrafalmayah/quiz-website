@@ -17,19 +17,20 @@ html{
     overflow-x: hidden;
 }
 body{
+  padding-top: 3rem;
     min-height: 100vh;
 }
 /* End of Basic Reset */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'cairo', sans-serif;
     direction: rtl;
     min-height: 100vh;
-    background: #dde1e7;
-    padding-top: 3rem
+    background: #f3f9ff;
 }
 
 main{
+    background-color: #fff;
     max-width: 1200px;
     margin: 1rem auto;
     border-radius: 10px;
@@ -48,7 +49,8 @@ main{
     border: none;
     border-radius: 10px;
     padding: .75em 1em;
-    background-color: #f5f5f5;
+    background-color: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
 }
 
 button, input[type="submit"], main a{
@@ -86,25 +88,29 @@ button, input[type="submit"], main a{
     border-radius: 5px;
     border-color: #585858;
 }
+.question select:focus {
+    outline: none;
+}
 
 .question .question-structure{
     display: grid;
     gap: 20px;
 }
 
-.question input, .question textarea {
+.question input:not([type="radio"]), .question textarea {
     border: none;
     border-radius: 10px;
     padding: .5em 1em;
-    background-color: #f5f5f5;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
 }
 
 .question textarea {
     resize: vertical;
 }
 
-input:focus, textarea:focus{
+input:not([type="radio"]):focus, textarea:focus{
     outline: none;
+    box-shadow: 0px 3px 6px #538aff inset;
 }
 
 .question .select-question{
@@ -114,6 +120,7 @@ input:focus, textarea:focus{
 
 #add-new-question-btn, .add-new-option-btn{
     display: block;
+    background-color: #fff;
     border: dotted #808080 2px;
     color: #808080;
     width: 100%;
@@ -160,6 +167,14 @@ input[type="submit"]:hover{
     right: 20px;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+.question-option:has(input[type="radio"]:checked) input[type="text"]{
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #59ff5365;
+}
+
+.question-option:has(input[type="radio"]:checked) input[type="text"]:focus{
+    box-shadow: 0px 3px 6px #59ff5365 inset;
 }
 
 .question-option .delete-option{

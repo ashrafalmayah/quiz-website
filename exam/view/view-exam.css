@@ -17,16 +17,16 @@ html{
     overflow-x: hidden;
 }
 body{
+  padding-top: 3rem;
     min-height: 100vh;
 }
 /* End of Basic Reset */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'cairo', sans-serif;
     direction: rtl;
     min-height: 100vh;
-    background: #dde1e7;
-    padding-top: 3rem
+    background: #f3f9ff;
 }
 
 main{
@@ -38,17 +38,37 @@ form{
     display: grid;
     gap: 20px;
 }
+
+.exam-name{
+    font-size: 2rem;
+    padding: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
+}
+
 .question{
-    background-color: aliceblue;
-    border-radius: 20px;
     padding: 30px 100px;
     display: grid;
+    text-decoration: none;
+    color: #0b61c1;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
 }
 
 .question-options > div{
     padding: .25em 1em;
     margin-top: 10px;
     border-radius: 5px;
+    font-size: 1.25rem;
+}
+
+.question-options > div input{
+    width: 15px;
+    aspect-ratio: 1;
 }
 
 .button{
@@ -59,4 +79,14 @@ form{
     color: #fff;
     background-color: #2b69dd;
     padding: 0.5em 2em;
+}
+
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    .question {
+        padding: 1rem;
+    }
 }

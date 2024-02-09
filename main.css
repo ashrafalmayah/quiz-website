@@ -17,16 +17,20 @@ html{
     overflow-x: hidden;
 }
 body{
+  padding-top: 3rem;
     min-height: 100vh;
 }
 /* End of Basic Reset */
 
+:root{
+    --back-color: #ffffff;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'cairo', sans-serif;
     direction: rtl;
     min-height: 100vh;
-    background: #dde1e7;
-    padding-top: 3rem
+    background: #f3f9ff;
 }
 
 main{
@@ -41,24 +45,26 @@ main{
 
 }
 
-.item{
+.list .item{
     display: block;
     text-decoration: none;
-    color: unset;
-    border-radius: 5px; 
+    color: #0b61c1;
+    border-radius: 5px;
     padding: 1rem;
-    background: #dde1e7;
-    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
+    background: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
+}
+
+.list .item:hover{
+    box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 5px #538aff49;
 }
 
 .search {
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr auto;
-    width: 30rem;
     margin: 10px auto;
-    border-bottom: 0.125rem solid #A5D6A7;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .search label{
@@ -74,11 +80,18 @@ main{
     border-radius: 5px;
 }
 
+.search-text:focus {
+    outline: none;
+    box-shadow: 0px 3px 6px #538aff inset;
+}
+
 .search-text{
     border: none;
     border-radius: 5px;
     padding: 0.25em 0.5em;
+    box-shadow: 0px 3px 6px #bad0ff inset;
 }
+
 
 label {
     color: #607d8b;
@@ -88,10 +101,10 @@ label {
 }
 
 .wrapper {
-    background: #dde1e7;
+    background: var(--back-color);
     padding: 25px;
     border-radius: 3px;
-    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
 }
 
 .pagination {
@@ -102,7 +115,7 @@ label {
 }
 
 .pagination li {
-    background: #dde1e7;
+    background: #fff;
     flex: 1;
     margin: 0px 5px;
     border-radius: 3px;
@@ -111,7 +124,7 @@ label {
 
 .pagination li a {
     height: 45px;
-    width: 55px;
+    width: 100%;
     color: #4d3252;
     font-size: 18px;
     text-decoration: none;
@@ -120,19 +133,13 @@ label {
     text-align: center;
 }
 
-.pagination li:first-child a {
-    width: 120px;
-}
-
-.pagination li:last-child a {
-    width: 100px;
-}
-
 .pagination li.active {
-    box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 5px #5e687949;
+    box-shadow: inset -3px -3px 7px #ffffff8b, inset 3px 3px 5px #5e687979;
 }
 
 .pagination li.active a {
+    cursor: default;
+    pointer-events: none;
     font-size: 17px;
     color: #6f6cde;
 }

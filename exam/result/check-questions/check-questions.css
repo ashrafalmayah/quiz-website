@@ -17,16 +17,16 @@ html{
     overflow-x: hidden;
 }
 body{
+  padding-top: 3rem;
     min-height: 100vh;
 }
 /* End of Basic Reset */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'cairo', sans-serif;
     direction: rtl;
     min-height: 100vh;
-    background: #dde1e7;
-    padding-top: 3rem
+    background: #f3f9ff;
 }
 
 main{
@@ -35,36 +35,51 @@ main{
     
 }
 
+.exam-name{
+    font-size: 2rem;
+    padding: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #538aff49;
+}
+
 .questions-container{
     display: grid;
     gap: 20px;
 }
 .question{
-    border: #97d497 solid 3px;
     border-radius: 20px;
     padding: 30px 100px;
     display: grid;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #59ff5365;
 }
 
 
 .question-options > div{
+    font-weight: 600;
     padding: .25em 1em;
     margin-top: 10px;
     border-radius: 5px;
 }
 
 .question:has(.wrong){
-    border-color: #c77f7f;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #ff3c3c65;
 }
 
 .correct{
-    background-color: #b9e2b9;
-    border: #97d497 solid 2px;
+    color: white;
+    background-color: #59b459;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #59ff5349;
 }
 
 .wrong{
-    background-color: #c59a9a;
-    border: #c77f7f solid 2px;
+    color: white;
+    background-color: #ce7c7c;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #ff535349;
 }
 .button{
     text-decoration: none;
@@ -72,4 +87,14 @@ main{
     color: #fff;
     background-color: #2b69dd;
     padding: 0.5em 2em;
+}
+
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    .question {
+        padding: 1rem;
+    }
 }

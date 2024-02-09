@@ -17,26 +17,22 @@ html{
     overflow-x: hidden;
 }
 body{
+  padding-top: 3rem;
     min-height: 100vh;
 }
 /* End of Basic Reset */
+
 body {
-    background: linear-gradient(#111, #222);
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: right;
+    font-family: 'cairo', sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: #f3f9ff;
 }
 
-.container {
-    width: 80%;
-    height: 80%;
-    background: rgba(255, 255, 255, 0.1);
-    border-style: solid;
-    border-color: #ccbcbc;
-    border-radius: 20px;
+main{
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 2rem;
 }
 
 .hedeng p {
@@ -47,69 +43,39 @@ body {
     font-weight: 700;
 }
 
-tr td {
-    border: 1px solid black;
-}
-
 #studentsTable {
     width: 100%;
-    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: clip;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px #5e687949;
+    border-collapse: collapse; 
+}
+
+#studentsTable td, #studentsTable th{
+    font-weight: 600;
+    border-left: 5px solid #f3f9ff;
+    padding: .5em;
+}
+
+#studentsTable td:last-child, #studentsTable th:last-child{
+    border-left: none;
 }
 
 #studentsTable th {
-    background-color: #1f10f0;
-    border: 1px solid black;
+    color: #fff;
+    background-color: #2b69dd;
     padding: 8px;
     text-align: right;
 }
 
 #studentsTable tr {
     background-color: #f2f2f2;
-    border: 1px solid black;
     padding: 8px;
     text-align: right;
 }
 
-
-/* .hedengP {}
-
-.TableLocation {
-    margin-left: 20%;
-    width: 20px;
+#studentsTable .failed{
+    color: #fff;
+    background-color: #ff2424;
 }
-
-.th,
-td {
-    text-align: right;
-}
-
-#myTable {
-    width: 500px;
-    border-collapse: collapse;
-}
-
-#myTable th,
-#myTable td {
-    border: 1px solid black;
-    padding: 15px;
-}
-
-#myTable th {
-    background-color: #c03434;
-}
-
-#myTable th:nth-child(3) {
-    color: rgb(32, 31, 31);
-}
-
-#myTable th:nth-child(3)[data-grade="A"] {
-    background-color: green;
-}
-
-#myTable th:nth-child(3)[data-grade="B"] {
-    background-color: yellow;
-}
-
-#myTable th:nth-child(3)[data-grade="C"] {
-    background-color: red;
-} */
